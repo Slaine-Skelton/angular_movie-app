@@ -1,5 +1,5 @@
 <h2 class="ui grey header">
-    <img class="ui image" src="./assets/images/Movie.jpg">
+    <img class="ui image" src="./assets/images/movie.png ">
     <div class="content">
       Do you know your movies?
     </div>
@@ -13,4 +13,11 @@
   <div *ngIf="movieData" class="ui raised segment">
     <h3 *ngIf="movieData">Movie: {{movieData.Title}}</h3>
     <img *ngIf="movieData" src={{movieData.Poster}} [style.height.px]='imageHeight'>
+    <ul>
+      <li *ngFor="let rate of movieData.Ratings">
+        Source: {{rate.Source}} <br />
+        Rating : {{rate.Value}}
+      </li>
+    </ul>
+    <div ></div>
   </div>

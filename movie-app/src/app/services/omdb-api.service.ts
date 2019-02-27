@@ -16,7 +16,7 @@ export class OmdbApiService {
   getMovieData(movieName): Observable<IOMDBResponse>{
     console.log("URL: "+this._siteURL+movieName+this._key);
 
-    return this._http.get<IOMDBResponse>(this._siteURL+movieName+this._key).pipe(
+    return this._http.get<IOMDBResponse>(this._siteURL + movieName + this._key).pipe(
     tap(data => console.log('All: ' + JSON.stringify(data))),
     catchError(this.handleError));
   }
